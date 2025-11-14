@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Multi-sim hoster
 // @namespace    https://github.com/h1d34uz3hunt3r
-// @downloadURL  https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.js
-// @updateURL    https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.js
+// @downloadURL  https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.user.js
+// @updateURL    https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.user.js
 // @version      2025-11-13
 // @description  Easier tribute loading for the old sim, the new sim, and murder games
 // @author       h1d34uz3hunt3r
@@ -815,5 +815,6 @@
     }
 
 })();
+
 
 
