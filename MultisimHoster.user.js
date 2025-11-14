@@ -342,7 +342,7 @@
                 } else {
                     //Autofill
                     for (const setTeam of setTeams) {
-                        if (post.querySelector(".postMessage").innerText.toLowerCase().includes(setTeam.name.toLowerCase())) {
+                        if (!post.querySelector(".hostingTeam").value && post.querySelector(".postMessage").innerText.toLowerCase().includes(setTeam.name.toLowerCase())) {
                             post.querySelector(".hostingTeam").value = setTeam.name;
                             post.querySelector(".hostingColor").value = setTeam.color;
                             break;
@@ -815,6 +815,7 @@
     }
 
 })();
+
 
 
 
