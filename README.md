@@ -14,7 +14,7 @@ Supports:
 3. Click "Install" or "Confirm installation".
 
 # How to use it
-Scroll to the bottom of the page to see the controls. Change the mode to the simulator you want to host for.  
+Scroll to the bottom of the page to see the controls. Change the mode to the simulator you want to host with.  
 ![Mode selection](https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/blob/main/Examples/ModeSelect.png)
 
 Click "Draw". Deselect entries you don't want included by unchecking the checkbox in the top left. Or click "Deselect All" to deselect all entries. Entries that are posted after you draw won't be included, you can click "Draw" again to include them.  
