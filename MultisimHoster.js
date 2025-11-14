@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Multi-sim hoster
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/h1d34uz3hunt3r
 // @version      2025-11-13
 // @description  Easier tribute loading for the old sim, the new sim, and murder games
 // @author       h1d34uz3hunt3r
@@ -811,4 +811,5 @@
 
         createMurderGamesControls();
     }
+
 })();
