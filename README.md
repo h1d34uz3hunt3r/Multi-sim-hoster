@@ -6,7 +6,7 @@ Supports:
 [Orteil's Murder Games](https://orteil.dashnet.org/murdergames/)
 
 # Installation
-1. Install the Tampermonkey exstension for the browser of your choice.  
+1. Install the Tampermonkey extension for the browser of your choice.  
 (**[Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)**, **[Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)**, **[Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)**)
 
 2. Click **[here](https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.user.js)**.
