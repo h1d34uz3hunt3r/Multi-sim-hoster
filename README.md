@@ -13,6 +13,10 @@ Supports:
 
 3. Click "Install" or "Confirm installation".
 
+### A quick note on Chrome/Edge 138+
+You will need to enable Developer Mode and/or enable Allow User Scripts in your browser's extensions page.
+See [here](https://www.tampermonkey.net/faq.php?locale=en#Q209) for more info.
+
 # How to use it
 Scroll to the bottom of the page to see the controls. Change the mode to the simulator you want to host with.  
 ![Mode selection](https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/blob/main/Examples/ModeSelect.png)
