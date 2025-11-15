@@ -14,7 +14,7 @@ Supports:
 3. Click "Install" or "Confirm installation".
 
 ### A quick note on Chrome/Edge 138+
-You will need to enable Developer Mode and/or enable Allow User Scripts in your browser's extensions page.
+You will need to enable Developer Mode and/or Allow User Scripts in your browser's extensions page.  
 See [here](https://www.tampermonkey.net/faq.php?locale=en#Q209) for more info.
 
 # How to use it
