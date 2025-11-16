@@ -3,7 +3,7 @@
 // @namespace    https://github.com/h1d34uz3hunt3r
 // @downloadURL  https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.user.js
 // @updateURL    https://github.com/h1d34uz3hunt3r/Multi-sim-hoster/raw/main/MultisimHoster.user.js
-// @version      2025-11-13
+// @version      2025-11-15
 // @description  Easier tribute loading for the old sim, the new sim, and murder games
 // @author       h1d34uz3hunt3r
 // @include     /^(https?://)?boards\.4chan(nel)?\.org/.*/(res|thread)/.*/
@@ -16,6 +16,7 @@
 // @grant       unsafeWindow
 // @grant       GM_setClipboard
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.5.2/jscolor.min.js
 // @run-at      document-idle
 // ==/UserScript==
 
@@ -146,6 +147,19 @@
                 entry.querySelector(".hostingNumber").innerText = "";
             }
         }
+    }
+
+    function hide() {
+      for (const post of document.querySelectorAll(".post.reply")) {
+        const form = post.querySelector(".hostingForm");
+        if (form) {
+          if (form.style.display !== "none") {
+            form.style.display = "none";
+          } else {
+            form.style.display = "flex";
+          }
+        }
+      }
     }
 
     function draw() {
@@ -295,12 +309,11 @@
 
                 const color = document.createElement("input");
                 color.classList.add("hostingColor");
-                color.type = "color";
+                color.type = "text";
                 color.value = "#FFFFFF";
-                Object.assign(color.style, {
-                    width: "67px",
-                    height: "25px"
-                })
+                color.setAttribute('data-jscolor', '{height: 23.9833}');
+                color.style.width = "93px";
+                new jscolor(color);
                 optionsFields.appendChild(color);
                 if (sim !== "hgns") {
                     color.style.display = "none";
@@ -321,6 +334,7 @@
                 post.prepend(form);
             } else {
                 //Form already exists. Convert for correct sim
+                post.querySelector(".hostingForm").style.display = "flex";
                 post.querySelector(".hostingTeamSpan").style.display = (sim === "hgns" || sim === "mg") ? "flex" : "none";
                 post.querySelector(".hostingColor").style.display = sim === "hgns" ? "inline-block" : "none";
                 post.querySelector(".hostingLoadoutFields").style.display = sim === "mg" ? "flex" : "none";
@@ -345,6 +359,7 @@
                         if (!post.querySelector(".hostingTeam").value && post.querySelector(".postMessage").innerText.toLowerCase().includes(setTeam.name.toLowerCase())) {
                             post.querySelector(".hostingTeam").value = setTeam.name;
                             post.querySelector(".hostingColor").value = setTeam.color;
+                            post.querySelector(".hostingColor").jscolor.fromString(setTeam.color);
                             break;
                         }
                     }
@@ -445,7 +460,7 @@
         let nameCount = 0;
         const teams = tributeData.unaffiliated.map(ele => {
             nameCount++;
-            return {players: [ele], color: ele.color, name: " ".repeat(nameCount)}
+            return {players: [ele], color: ele.color, name: `Tribute ${nameCount}`}
         });
         teams.push(...Object.values(tributeData.teams));
 
@@ -659,7 +674,7 @@
         });
         controls.appendChild(modeSelect);
 
-        for (const func of [draw, save, selectAll, deselectAll]) {
+        for (const func of [draw, save, selectAll, deselectAll, hide]) {
             const button = document.createElement("button");
             button.type = "button";
             button.addEventListener("click", func);
@@ -815,7 +830,3 @@
     }
 
 })();
-
-
-
-
