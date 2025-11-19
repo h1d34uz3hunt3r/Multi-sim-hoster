@@ -361,7 +361,11 @@
                             post.querySelector(".hostingColor").value = setTeam.color;
                             post.querySelector(".hostingColor").jscolor.fromString(setTeam.color);
                             break;
-                        }
+                        } else if (post.querySelector(".hostingTeam").value === setTeam.name) {
+							post.querySelector(".hostingColor").value = setTeam.color;
+                            post.querySelector(".hostingColor").jscolor.fromString(setTeam.color);
+                            break;
+						}
                     }
                 }
             }
@@ -830,3 +834,4 @@
     }
 
 })();
+
